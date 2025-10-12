@@ -155,8 +155,8 @@ curl -X POST http://localhost:3000/api/bills/echo   -H "Content-Type: applicatio
 
 ## 👨‍💻 Author
 **Aakash Tiwari**  
-📧 sofiiq62@rowan.edu  
-🌐 [GitHub Profile](https://github.com/<your-username>)
+📧 taakash025@gmail.com
+🌐 https://github.com/uraakashprojects
 
 ---
 
