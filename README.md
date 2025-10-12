@@ -26,6 +26,20 @@ Built using **Node.js**, **Express**, and **PostgreSQL**, this project allows yo
 
 ---
 
+## 📂 Project Structure
+```
+.
+├── src/
+│   ├── index.js
+│   ├── routes/
+│   │   └── bills.js
+│   └── db/
+│       └── pool.js
+├── .env.example
+├── package.json
+└── README.md
+```
+
 ---
 
 ## ⚙️ Getting Started
@@ -41,27 +55,40 @@ Built using **Node.js**, **Express**, and **PostgreSQL**, this project allows yo
 ```bash
 git clone https://github.com/<your-username>/<your-repo-name>.git
 cd <your-repo-name>
-
-
------
-
-npm install
-
-
-
-----
-
-PORT=3000
-NODE_ENV=development
-DATABASE_URL=postgres://<user>:<password>@localhost:5432/financial_tracker
-
-----
-
-npm run dev
-
+```
 
 ---
 
+### 3️⃣ Install Dependencies
+```bash
+npm install
+```
+
+---
+
+### 4️⃣ Set Up Environment Variables
+Create a `.env` file based on `.env.example`:
+
+```
+PORT=3000
+NODE_ENV=development
+DATABASE_URL=postgres://<user>:<password>@localhost:5432/financial_tracker
+```
+
+---
+
+### 5️⃣ Run the Server
+```bash
+npm run dev
+```
+Your app should now be running at:  
+👉 [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🗃️ Database Setup
+Run these commands in PostgreSQL:
+```sql
 CREATE DATABASE financial_tracker;
 
 CREATE TABLE IF NOT EXISTS bills (
@@ -72,4 +99,66 @@ CREATE TABLE IF NOT EXISTS bills (
   status VARCHAR(20) NOT NULL DEFAULT 'unpaid',
   created_at TIMESTAMP DEFAULT NOW()
 );
+```
 
+---
+
+## 🚀 API Endpoints
+
+### **GET** `/api/bills`
+Fetch all bills.
+```bash
+curl http://localhost:3000/api/bills
+```
+
+**Response Example**
+```json
+[
+  {
+    "id": 1,
+    "type": "rent",
+    "month": "2025-10",
+    "amount": 1200.00,
+    "status": "unpaid"
+  }
+]
+```
+
+---
+
+### **POST** `/api/bills/echo`
+Echo back the JSON you send (for testing).
+```bash
+curl -X POST http://localhost:3000/api/bills/echo   -H "Content-Type: application/json"   -d '{"type":"rent","month":"2025-10","amount":1200}'
+```
+
+**Response Example**
+```json
+{
+  "received": {
+    "type": "rent",
+    "month": "2025-10",
+    "amount": 1200
+  }
+}
+```
+
+---
+
+## 🧠 Future Improvements
+- Add authentication (JWT)
+- Add charts for visualization
+- Integrate budgets and savings goals
+- Add front-end dashboard (React)
+
+---
+
+## 👨‍💻 Author
+**Aakash Tiwari**  
+📧 sofiiq62@rowan.edu  
+🌐 [GitHub Profile](https://github.com/<your-username>)
+
+---
+
+## 📜 License
+This project is open-source and available under the [MIT License](LICENSE).
