@@ -1,0 +1,19 @@
+echo "version: 1.0
+runtime: nodejs20
+build:
+  commands:
+    pre-build:
+      - npm ci || npm install
+    build: []
+run:
+  runtime-version: 20
+  command: \"npm start\"
+  network:
+    port: 3000
+  env:
+    - name: NODE_ENV
+      value: production" > apprunner.yaml
+
+git add apprunner.yaml
+git commit -m "chore: add App Runner config"
+git push
