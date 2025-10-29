@@ -77,7 +77,7 @@ DATABASE_URL=postgres://<user>:<password>@localhost:5432/financial_tracker
 
 ---
 
-### 5️⃣ Run the Server
+### 5️⃣ Run the Server:
 ```bash
 npm run dev
 ```
