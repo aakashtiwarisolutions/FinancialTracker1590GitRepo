@@ -26,7 +26,7 @@ Built using **Node.js**, **Express**, and **PostgreSQL**, this project allows yo
 
 ---
 
-## 📂 Project Structure
+## 📂 Project Structure:
 ```
 .
 ├── src/
