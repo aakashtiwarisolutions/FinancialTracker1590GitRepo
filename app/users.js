@@ -8,6 +8,7 @@ const users = []; // { id, name, email }
 router.get('/', (_req, res) => res.json(users));
 console.log();
 // POST /api/v1/users
+console.log("Initializing Post");
 router.post('/', (req, res) => {
   const { month } = req.body || {};
   console.log('Received JSON:', req.body);
