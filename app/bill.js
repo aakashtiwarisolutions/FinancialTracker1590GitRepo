@@ -11,6 +11,7 @@ router.get('/', (_req, res) => {
 console.log("bill route called");
 
 // pick fields + compute
+console.log("Initializing Post");
 router.post('/', (req, res) => {
   console.log('Received JSON:', req.body); // see it in terminal
   // const bill = { id: bills.length + 1, ...req.body }; 
