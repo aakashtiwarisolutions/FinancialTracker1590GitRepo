@@ -5,7 +5,7 @@ Built using **Node.js**, **Express**, and **PostgreSQL**, this project allows yo
 
 ---
 
-## ✨ Features
+## ✨ Features:-
 - Add, list, and update bills
 - Simple RESTful API using Express
 - PostgreSQL database integration
